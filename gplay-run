@@ -1,0 +1,4 @@
+#!/bin/bash
+
+FILE=`zenity --file-selection`
+gplay $FILE

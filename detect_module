@@ -1,0 +1,23 @@
+#!/bin/bash
+# 0: wandboard
+# 1: edm1-cf-imx6
+# 2: picosom-imx6
+# 3: edm1-cf-imx6sx
+# 4: picosom-imx6ul
+# 5. picosom-imx7
+
+if [[ $(cat /proc/device-tree/compatible | grep "wandboard") != "" ]]; then
+	echo "0"
+elif [[ $(cat /proc/device-tree/compatible | grep "edm1-cf-imx6") != "" ]]; then
+	echo "1"
+elif [[ $(cat /proc/device-tree/compatible | grep "picosom-imx6") != "" ]]; then
+	echo "2"
+elif [[ $(cat /proc/device-tree/compatible | grep "edm1-cf-imx6sx") != "" ]]; then
+	echo "3"
+elif [[ $(cat /proc/device-tree/compatible | grep "picosom-imx6ul") != "" ]]; then
+	echo "4"
+elif [[ $(cat /proc/device-tree/compatible | grep "picosom-imx7") != "" ]]; then
+	echo "5"
+else
+	echo "0"
+fi

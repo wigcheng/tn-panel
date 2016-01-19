@@ -1,0 +1,44 @@
+#!/bin/bash
+
+audio_now=$(cat /home/ubuntu/.asoundrc | grep "card" | awk '{print $2}')
+
+if [[ "$1" == "WANDBOARD" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	elif [[ "$audio_now" == "1" ]]; then
+		echo "SPDIF"
+	elif [[ "$audio_now" == "2" ]]; then
+		echo "HDMI-AUDIO"
+	fi
+elif [[ "$1" == "EDM1-CF-IMX6" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	elif [[ "$audio_now" == "1" ]]; then
+		echo "SPDIF"
+	elif [[ "$audio_now" == "2" ]]; then
+		echo "HDMI-AUDIO"
+	fi
+elif [[ "$1" == "PICOSOM-IMX6" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	elif [[ "$audio_now" == "1" ]]; then
+		echo "HDMI-AUDIO"
+	fi
+
+elif [[ "$1" == "EDM1-CF-IMX6SX" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	elif [[ "$audio_now" == "1" ]]; then
+		echo "SPDIF"
+	fi
+elif [[ "$1" == "PICOSOM-IMX6UL" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	fi
+
+elif [[ "$1" == "PICOSOM-IMX7" ]]; then
+	if [[ "$audio_now" == "0" ]]; then
+		echo "SGTL5000"
+	fi
+
+fi

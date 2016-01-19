@@ -1,0 +1,4 @@
+#!/bin/bash
+
+val=$(sudo sh -c "cat /sys/class/edm/gpio/$1/value")
+echo "$val"

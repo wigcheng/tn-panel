@@ -1,0 +1,54 @@
+#!/bin/bash
+
+
+if [[ "$1" == "WANDBOARD" ]]; then
+	if [[ $2 == "HDMI-AUDIO" ]]; then
+    		file="asoundrc_2"
+	elif [[ $2 == "SPDIF" ]]; then
+    		file="asoundrc_1"
+	elif [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	fi
+elif [[ "$1" == "EDM1-CF-IMX6" ]]; then
+	if [[ $2 == "HDMI-AUDIO" ]]; then
+    		file="asoundrc_2"
+	elif [[ $2 == "SPDIF" ]]; then
+    		file="asoundrc_1"
+	elif [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	else
+	    file="asoundrc_2"
+	fi
+elif [[ "$1" == "PICOSOM-IMX6" ]]; then
+	if [[ $2 == "HDMI-AUDIO" ]]; then
+    		file="asoundrc_1"
+	elif [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	else
+	    file="asoundrc_0"
+	fi
+
+elif [[ "$1" == "EDM1-CF-IMX6SX" ]]; then
+	if [[ $2 == "SPDIF" ]]; then
+    		file="asoundrc_1"
+	elif [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	else
+	    file="asoundrc_0"
+	fi
+elif [[ "$1" == "PICOSOM-IMX6UL" ]]; then
+	if [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	else
+	    file="asoundrc_0"
+	fi
+elif [[ "$1" == "PICOSOM-IMX7" ]]; then
+	if [[ $2 == "SGTL5000" ]]; then
+    		file="asoundrc_0"
+	else
+	    file="asoundrc_0"
+	fi
+fi
+
+cp /home/ubuntu/tn/"$file" /home/ubuntu/.asoundrc
+sync
